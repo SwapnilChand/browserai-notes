@@ -1,6 +1,6 @@
-import { Mic, Square, Loader2 } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { Button } from "@/components/ui/button"
+import { Mic, Square, Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 interface RecordButtonProps {
   isRecording: boolean;
@@ -9,14 +9,19 @@ interface RecordButtonProps {
   onStop: () => void;
 }
 
-export default function RecordButton({ isRecording, isModelLoaded, onStart, onStop }: RecordButtonProps) {
+export default function RecordButton({
+  isRecording,
+  isModelLoaded,
+  onStart,
+  onStop,
+}: RecordButtonProps) {
   return (
     <Button
       variant={isRecording ? "destructive" : "default"}
       size="lg"
       onClick={isRecording ? onStop : onStart}
       disabled={!isModelLoaded}
-      className="relative overflow-hidden"
+      className="hover:bg-gray-600 hover:text-white relative overflow-hidden"
     >
       {!isModelLoaded ? (
         <>
@@ -35,11 +40,10 @@ export default function RecordButton({ isRecording, isModelLoaded, onStart, onSt
         </>
       ) : (
         <>
-          <Mic className="w-5 h-5 mr-2" />
+          <Mic className="w-5 h-5 mr-2 hover:bg-primary/80" />
           Record Note
         </>
       )}
     </Button>
   );
 }
-
