@@ -1,0 +1,8 @@
+- add local storage in txt format
+- allow deletion of notes
+- add a keyboard shortcut to start/stop recording
+- Fix labels manager
+- Handle the case of not having detected any audio - currently placeholder "[BLANK_AUDIO]" is shown.
+- add a container to keep all the notes in.
+- make the notes numbered
+- what is priority?
